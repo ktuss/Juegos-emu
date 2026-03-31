@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.sphere {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Mujer (blanca) */
+.female {
+  background: white;
+  left: 0;
+  top: 100px;
+  box-shadow: 0 0 20px white;
+}
+
+/* Hombre (negra con borde blanco) */
+.male {
+  background: black;
+  border: 2px solid white;
+  right: 0;
+  top: 100px;
+  box-shadow: 0 0 20px white;
+}
+
+/* Hover efecto */
+.sphere:hover {
+  transform: scale(1.1);
+}
+
+/* Animación flotante */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.female, .male {
+  animation: float 3s ease-in-out infinite;
+}
